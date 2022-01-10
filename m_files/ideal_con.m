@@ -33,7 +33,7 @@ for s_tp1 = 1:num_of_s
 end
 
 
-%% decomposition : c_i <=> p^i(s_{t+1}, a_t | s_t) =|chain rule|= p^i(s_{t+1}| a_t, s_t)*p^i(a_t | s_t) % decompostion the ideal onto the ideal system model and ideal DM rule
+%% decomposition : c_i <=> p^i(s_{t+1}, a_t | s_t) =|chain rule|= p^i(s_{t+1}| a_t, s_t)*p^i(a_t | s_t) % decomposing the ideal onto the ideal system model and ideal DM rule
 for a_t = 1:num_of_a
     for s_t = 1:num_of_s
         r_i(a_t, s_t) = sum(c_i(:, a_t, s_t)); % step 1 : marginal of c_i over all future states s_tp1

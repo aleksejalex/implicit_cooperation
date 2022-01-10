@@ -1,5 +1,5 @@
 %% MAIN_test is a main programme that runs experiments
-
+%
 % Part of BSc project of AG (FJFI, CVUT)
 % Last updated by AG, 20220105
 % 
@@ -17,8 +17,8 @@ rng(rnd_seed);
 horizon_1 = 10;         % horison for optimisation for player 1
 horizon_2 = horizon_1;  % horison for optimisation for player 2 
 w_1 = 1;                % indicates whether player 1 cooperates (=1) or not (=0). 
-                        %Genereally this weight reflects player's trust in
-                        %the information provided by the co-player.
+                        % Genereally this weight reflects player's trust in
+                        % the information provided by the co-player.
 w_2 = 0;
 
 %% constructors
@@ -29,7 +29,6 @@ data_1 = data_con (1, rnd_seed, ndat);                              % data of th
 data_2 = data_con (2, rnd_seed, ndat);                              % data of the 2nd player
 
 %% time loop over simulation steps
-%figure(1);
 t_vect=[];                                                         %initialising time vector
 for t = 1: ndat                                                    % loop over time
     data_1.t = t;                                                  % storing time in both data
@@ -51,7 +50,7 @@ for t = 1: ndat                                                    % loop over t
     agent_2 = learn(agent_2, data_2);
     t_vect = [t_vect, t];  
 end
-%% Game evaluation, where 'unused cake' means unclaimed part of the entire amount; 'succes rate' is a percent of games with non-zero profit 
+%% Game evaluation, where 'unused cake' means unclaimed part of the entire amount; 'success rate' is a percent of games with non-zero profit 
 [pr1, pr2, unused_cakes, success_rate] = profit (data_1, data_2, num_of_a, num_of_s, ndat)
 
 
